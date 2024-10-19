@@ -4,14 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        #inventoryForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ced4da;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .delete-button {
+            background: #dc3545;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background: #c82333;
+        }
+    </style>
 </head>
 <body>
     <h1>Inventory Management</h1>
     <form id="inventoryForm">
         <input type="text" id="itemName" placeholder="Item Name" required>
         <input type="number" id="quantity" placeholder="Quantity" required>
-        <input type="number" id="unitPrice" placeholder="Unit Price" required>
+        <input type="number" id="unitPrice" placeholder="Unit Price (RM)" required>
         <input type="date" id="expirationDate" placeholder="Expiration Date">
         <button type="submit">Add Item</button>
     </form>
@@ -21,7 +109,7 @@
             <tr>
                 <th>Item Name</th>
                 <th>Quantity</th>
-                <th>Unit Price</th>
+                <th>Unit Price (RM)</th>
                 <th>Total Value</th>
                 <th>Expiration Date</th>
                 <th>Actions</th>
@@ -48,7 +136,7 @@
                 <td>${unitPrice}</td>
                 <td>${totalValue}</td>
                 <td>${expirationDate}</td>
-                <td><button onclick="deleteRow(this)">Delete</button></td>
+                <td><button class="delete-button" onclick="deleteRow(this)">Delete</button></td>
             </tr>`;
             document.querySelector('#inventoryTable tbody').insertAdjacentHTML('beforeend', row);
             this.reset();
