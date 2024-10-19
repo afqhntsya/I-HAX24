@@ -4,7 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inventory Management</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    #inventoryTable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #inventoryTable th, #inventoryTable td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #inventoryTable tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #inventoryTable th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <h1>Inventory Management</h1>
