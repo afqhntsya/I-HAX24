@@ -6,7 +6,7 @@
     <title>Registration Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -35,14 +35,14 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: black;
             border: none;
             color: white;
             border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #218838;
+            background-color: black;
         }
         .error {
             color: red;
@@ -52,7 +52,7 @@
             margin: 10px 0;
         }
         .agreement a {
-            color: #007bff;
+            color: purple;
             text-decoration: none;
         }
         .login-link {
@@ -60,7 +60,7 @@
             margin-top: 15px;
         }
         .login-link a {
-            color: #007bff;
+            color: purple;
             text-decoration: none;
         }
     </style>
@@ -98,7 +98,7 @@
             <p class="error" id="errorMessage"></p>
 
             <div class="login-link">
-                <p>Already have an account? <a href="login.html">Login here</a>.</p>
+                <p>Already have an account? <a href="Login.html">Login here</a>.</p>
             </div>
         </form>
     </div>
@@ -150,10 +150,14 @@
             errorMessage.textContent = "Registration successful!";
             errorMessage.style.color = "green";
 
-            // Redirect to the home page (you can change the URL to your actual home page)
-            window.location.href = "home.html";
+            // Redirect to the login page
+            window.location.href = "login.html";
         }
     </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
